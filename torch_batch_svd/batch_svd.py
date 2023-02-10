@@ -35,7 +35,7 @@ class BatchSVDFunction(torch.autograd.Function):
         else:
             U, S, V = out
 
-        _c.batch_svd_forward(input, U, S, V, True, 1e-7, 100, is_double)
+        _c.batch_svd_forward(input, U, S, V, True, 1e-1, 100, is_double)
         U.transpose_(1, 2)
         V.transpose_(1, 2)
         if ctx.is_half:
